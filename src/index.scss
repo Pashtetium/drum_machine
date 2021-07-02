@@ -1,3 +1,35 @@
+$backgroundColor: #26B6BF;
+$innerColor: #20989F;
+
 * {
-    border: 1px solid black;
+   
+    margin: 0px;
 }
+body {
+    user-select: none;    
+}
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: $innerColor;
+}
+.inner-container {
+    background-color: $backgroundColor;
+    width: 500px;
+    .controls {
+        display: inline-block;
+        .buttonSlider {
+            display:inli
+        }
+    }
+    .pad-bank {
+
+       .drum-pad {
+            display: inline-block;
+            cursor: pointer;
+        } 
+    }    
+}
+

@@ -1,13 +1,18 @@
 import React from 'react';
 import DrumPad from './DrumPad';
 
-const PadBank = (props) => {        
+class PadBank extends React.Component {        
+    constructor(props) {
+        super(props);
+    }   
+    render() {   
         let padBank;
-        if (props.power) {
-            padBank = props.currentPadBank.map((item, i, arr) => {
+        if (this.props.power) {
+            padBank = this.props.currentPadBank.map((item, i, arr) => {
+                console.log(this.props);
                 return (
                     <DrumPad 
-                        power={props.power}
+                        power={this.props.power}
                         clip={arr[i].url}
                         keyCode={arr[i].keyCode}
                         keyTrigger={arr[i].keyTrigger}
@@ -16,10 +21,10 @@ const PadBank = (props) => {
                 )
             })
         } else {
-            padBank = props.currentPadBank.map((item, i, arr) => {
+            padBank = this.props.currentPadBank.map((item, i, arr) => {
                 return (
                     <DrumPad 
-                        power={props.power}
+                        power={this.props.power}
                         clip='#'
                         keyCode={arr[i].keyCode}
                         keyTrigger={arr[i].keyTrigger}
@@ -30,7 +35,7 @@ const PadBank = (props) => {
         }
         return <div className="pad-bank">{padBank}</div>
 
-    
+    }
 }
 
 export default PadBank;

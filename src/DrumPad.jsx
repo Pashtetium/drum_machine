@@ -3,7 +3,8 @@ import React from 'react';
 class DrumPad extends React.Component {
     constructor(props) {
         super(props);
-        
+        this.playSound = this.playSound.bind(this);
+        this.handleKeyPress = this.handleKeyPress.bind(this);
     }
     componentDidMount() {
         document.addEventListener("keydown", this.handleKeyPress);
@@ -16,7 +17,7 @@ class DrumPad extends React.Component {
             this.playSound();
         }        
     }
-    playSound() {
+    playSound() {        
         const sound = document.getElementById(this.props.keyTrigger);
         sound.currentTime = 0;
         sound.play();

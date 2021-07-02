@@ -121,20 +121,18 @@ class App extends React.Component {
         this.state = {
             power: true,
             currentPadBank: bankOne
-        }
-        
-    }
-    
+        }        
+    }    
     render() {
         return (
-            <div>
+            <div className="inner-container" id="drum-machine">
                 <div className="controls">
                     <div className="buttonSlider">
                         <p>Power</p>
                         <div className="slider" />                        
                     </div>
                     <div className="displayBlock">
-                        <p id="display"></p>
+                        <p id="display">Display</p>
                     </div>
                     <div className="buttonSlider">
                         <p>Bank</p>
@@ -142,8 +140,8 @@ class App extends React.Component {
                     </div>
                 </div>
                 <PadBank 
-                power={this.state.power}
-                currentPadBank={this.state.currentPadBank}
+                  power={this.state.power}
+                  currentPadBank={this.state.currentPadBank}
                 />
             </div>
         )
