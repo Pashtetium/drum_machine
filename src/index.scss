@@ -1,5 +1,7 @@
 $backgroundColor: #26B6BF;
 $innerColor: #20989F;
+$padWidth: 50px;
+$padHeight: 40px;
 
 * {
    
@@ -13,22 +15,56 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: $innerColor;
+    background-color: $backgroundColor;
 }
 .inner-container {
-    background-color: $backgroundColor;
+    background-color: $innerColor;
     width: 500px;
+    height: 300px;
+    position: relative;
+    
     .controls {
-        display: inline-block;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        .displayBlock {
+            margin: 10px;
+            height: 30px;
+            width: 150px;
+            padding: 10px;
+            background-color: lighten(gray, 10%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
         .buttonSlider {
-            display:inli
+            display: flex;
+            width: 100px;
+            justify-content: center;
+            margin: 10px;
+            outline: 1px solid $backgroundColor;
+            padding: 10px;
+            height: 30px;
         }
     }
     .pad-bank {
+        display: inline-block;
+        width: $padWidth * 3 + 32;
+        height: $padHeight * 3 + 32;
 
+        margin: 5px;
+        
+        
        .drum-pad {
-            display: inline-block;
+            width: $padWidth;
+            height: $padHeight;
+            position: relative;
+            float: left;
             cursor: pointer;
+            margin: 10px;
+            box-sizing: border-box;
+            outline: 1px dotted white;
         } 
     }    
 }

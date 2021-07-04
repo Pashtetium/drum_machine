@@ -127,6 +127,7 @@ class App extends React.Component {
         return (
             <div className="inner-container" id="drum-machine">
                 <div className="controls">
+                    
                     <div className="buttonSlider">
                         <p>Power</p>
                         <div className="slider" />                        
