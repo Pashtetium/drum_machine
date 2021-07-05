@@ -17,6 +17,7 @@ class PadBank extends React.Component {
                         keyCode={arr[i].keyCode}
                         keyTrigger={arr[i].keyTrigger}
                         clipId={arr[i].id}
+                        updateDisplay={this.props.updateDisplay}
                     />
                 )
             })
@@ -29,6 +30,8 @@ class PadBank extends React.Component {
                         keyCode={arr[i].keyCode}
                         keyTrigger={arr[i].keyTrigger}
                         clipId={arr[i].id}
+                        updateDisplay={this.props.updateDisplay}
+
                     />
                 )
             })

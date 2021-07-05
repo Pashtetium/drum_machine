@@ -120,22 +120,61 @@ class App extends React.Component {
         super(props);
         this.state = {
             power: true,
-            currentPadBank: bankOne
-        }        
-    }    
+            currentPadBank: bankOne,
+            currentPadBankId: 'Heater Kit',
+            display: ''
+        }   
+        this.powerSwitch = this.powerSwitch.bind(this);  
+        this.bankSwitch = this.bankSwitch.bind(this);  
+        this.updateDisplay = this.updateDisplay.bind(this);
+    } 
+    powerSwitch() {
+      this.setState({
+        power: !this.state.power,
+        display: ''        
+      })
+    }
+    bankSwitch() {
+      if (this.state.power) {
+        if (this.state.currentPadBankId === 'Heater Kit') {
+          this.setState({
+            currentPadBank: bankTwo,
+            currentPadBankId: 'Smooth Piano Kit',
+            display: 'Smooth Piano Kit'
+          })
+        } else {
+          this.setState({
+            currentPadBank: bankOne,
+            currentPadBankId: 'Heater Kit',
+            display: 'Heater Kit'
+          })
+        }
+        
+      }
+      
+    }
+    updateDisplay(name) {
+      if (this.state.power) {
+        this.setState({
+        display: name
+      })
+      }
+      
+    }
+       
     render() {
         return (
             <div className="inner-container" id="drum-machine">
                 <div className="controls">
                     
-                    <div className="buttonSlider">
+                    <div className="buttonSlider" onClick={this.powerSwitch}>
                         <p>Power</p>
                         <div className="slider" />                        
                     </div>
                     <div className="displayBlock">
-                        <p id="display">Display</p>
+                        <p id="display">{this.state.display}</p>
                     </div>
-                    <div className="buttonSlider">
+                    <div className="buttonSlider" onClick={this.bankSwitch}>
                         <p>Bank</p>
                         <div className="slider" />
                     </div>
@@ -143,6 +182,7 @@ class App extends React.Component {
                 <PadBank 
                   power={this.state.power}
                   currentPadBank={this.state.currentPadBank}
+                  updateDisplay={this.updateDisplay}
                 />
             </div>
         )
