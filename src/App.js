@@ -1,4 +1,5 @@
 import React from 'react';
+import reactDom from 'react-dom';
 import PadBank from './PadBank';
 
 const bankOne = [
@@ -115,6 +116,8 @@ const bankTwo = [
     }
   ];
 
+
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -163,20 +166,42 @@ class App extends React.Component {
     }
        
     render() {
+      const bankSlider = 
+      this.state.currentPadBank === bankOne 
+      ? {
+        float: 'left'
+      }
+      : {
+        float: 'right'
+      };
+      const pwrControl = 
+      this.state.power === true
+      ? {
+        backgroundImage: 'radial-gradient(red, red 80%);'
+        
+      } 
+      : {
+        backgroundImage: 'radial-gradient(black, black 80%);'
+        
+      };
         return (
             <div className="inner-container" id="drum-machine">
                 <div className="controls">
                     
                     <div className="buttonSlider" onClick={this.powerSwitch}>
-                        <p>Power</p>
-                        <div className="slider" />                        
+                        <div className="pwrBtnText"><p>Power</p></div>
+                        <div className="pwrBtn" style={pwrControl}>
+                           
+                        </div>                        
                     </div>
                     <div className="displayBlock">
                         <p id="display">{this.state.display}</p>
                     </div>
                     <div className="buttonSlider" onClick={this.bankSwitch}>
-                        <p>Bank</p>
-                        <div className="slider" />
+                        <div className="sliderText"><p>Bank</p></div>
+                        <div className="sliderOut">
+                          <div className="sliderIn" style={bankSlider} />  
+                        </div>  
                     </div>
                 </div>
                 <PadBank 
