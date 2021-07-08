@@ -9,7 +9,7 @@ class PadBank extends React.Component {
         let padBank;
         if (this.props.power) {
             padBank = this.props.currentPadBank.map((item, i, arr) => {
-                console.log(this.props);
+                
                 return (
                     <DrumPad 
                         power={this.props.power}

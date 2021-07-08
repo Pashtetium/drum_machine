@@ -1,5 +1,4 @@
 import React from 'react';
-import reactDom from 'react-dom';
 import PadBank from './PadBank';
 
 const bankOne = [
@@ -131,13 +130,16 @@ class App extends React.Component {
         this.bankSwitch = this.bankSwitch.bind(this);  
         this.updateDisplay = this.updateDisplay.bind(this);
     } 
-    powerSwitch() {
+    powerSwitch() {      
       this.setState({
         power: !this.state.power,
         display: ''        
       })
+      
     }
+  
     bankSwitch() {
+
       if (this.state.power) {
         if (this.state.currentPadBankId === 'Heater Kit') {
           this.setState({
@@ -175,24 +177,21 @@ class App extends React.Component {
         float: 'right'
       };
       const pwrControl = 
-      this.state.power === true
+      this.state.power
       ? {
-        backgroundImage: 'radial-gradient(red, red 80%);'
-        
+        backgroundImage: 'radial-gradient(red, gray 150%)'        
       } 
       : {
-        backgroundImage: 'radial-gradient(black, black 80%);'
-        
-      };
+        backgroundImage: 'radial-gradient(black, black 80%)'        
+      };            
         return (
             <div className="inner-container" id="drum-machine">
                 <div className="controls">
                     
                     <div className="buttonSlider" onClick={this.powerSwitch}>
                         <div className="pwrBtnText"><p>Power</p></div>
-                        <div className="pwrBtn" style={pwrControl}>
-                           
-                        </div>                        
+                        <div className="pwrBtn" style={pwrControl} />
+                                                                 
                     </div>
                     <div className="displayBlock">
                         <p id="display">{this.state.display}</p>
