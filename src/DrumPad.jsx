@@ -4,12 +4,12 @@ const activeStyle = {
     backgroundColor: 'orange',
     boxShadow: '0 3px orange',
     height: 35,
-    marginTop: 12
+    marginTop: 8
 };
   
 const inactiveStyle = {
     backgroundColor: 'grey',
-    marginTop: 10,
+    marginTop: 5,
     boxShadow: '3px 3px 5px black'
 };
 
@@ -53,7 +53,7 @@ class DrumPad extends React.Component {
               padStyle: activeStyle
             });
           }
-        } else if (this.state.padStyle.marginTop === 12) {
+        } else if (this.state.padStyle.marginTop === 8) {
           this.setState({
             padStyle: inactiveStyle
           });
@@ -61,7 +61,7 @@ class DrumPad extends React.Component {
           this.setState({
             padStyle: {
               height: 35,
-              marginTop: 12,
+              marginTop: 5,
               backgroundColor: 'grey',
               boxShadow: '0 3px grey'
             }

@@ -7,9 +7,11 @@ $padHeight: 40px;
     font-family: 'Russo One', sans-serif;
     margin: 0px;
 }
+
 body {
-    user-select: none;    
+    user-select: none;
 }
+
 #root {
     display: flex;
     justify-content: center;
@@ -17,8 +19,10 @@ body {
     height: 100vh;
     background-color: $backgroundColor;
 }
+
 .inner-container {
     background-color: $innerColor;
+    border-radius: 10%;
     width: 500px;
     height: 300px;
     position: relative;
@@ -26,83 +30,81 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    
-    .controls {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        .displayBlock {
-            margin: 10px;
-            height: 30px;
-            width: 150px;
-            padding: 10px;
-            background-color: lighten(gray, 10%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+} 
 
-        }
-        
-        .buttonSlider {
-            // display: flex;
-            width: 60px;
-            // justify-content: flex-start;
-            // flex-direction: row;
-            margin-top: 10px;
-            // outline: 1px solid $backgroundColor;
-            // padding: 10px;
-            height: 50px;
-            
-            .pwrBtn {
-                border-radius: 90%;
-                background-image: radial-gradient(
-                    red, gray 150%
-                );                
-                width: 30px;
-                height: 30px;
-                margin-left: 10px;
-            }
-            .sliderOut {
-                background-color: black;
-                // position: relative;
-                width: 60px;
-                height: 28px;
-                border-radius: 35%;
-                .sliderIn {
-                    border-radius: 100%;    
-                    background-color: blue;
-                    // outline: 1px solid brown;
-                    width: 20px;
-                    height: 20px;
-                    float: right;
-                    margin: 4px 4px;
-                }
-            }
-            .sliderText {
-                text-align: center;
-            }
-        }
-    }
-    .pad-bank {
-        display: inline-block;
-        width: $padWidth * 3 + 30px;
-        height: $padHeight * 4;        
-    
-       .drum-pad {
-            width: $padWidth;
-            height: $padHeight;
-            position: relative;
-            float: left;
-            cursor: pointer;
-            margin-right: 10px;
-            box-sizing: border-box;
-            outline: 1px solid white;              
-            text-align: center;
-            padding-top: 10px;          
-            font-weight: 100;
-            
-            
-        } 
-    }    
+.controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
+
+.displayBlock {
+    margin: 10px;
+    height : 30px;
+    width: 150px;
+    padding: 10px;
+    background-color: lighten(gray, 10%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonSlider {
+    width: 60px;
+    margin-top: 10px;
+    height: 50px;
+}
+
+.pwrBtn {
+    border-radius: 90%;
+    background-image: radial-gradient(
+    red, gray 150%
+    );
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.sliderOut {
+    background-color: black;
+    width: 60px;
+    height: 28px;
+    border-radius: 35%;
+}
+
+.sliderIn {
+    border-radius: 100%;
+    background-color: blue;
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin: 4px 4px;
+}
+
+.sliderText {
+    text-align: center;
+}
+
+.pad-bank {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: $padWidth * 3 + 30px;
+    height: $padHeight * 4;
+}
+
+.drum-pad {
+    width: $padWidth;
+    height: $padHeight;    
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 10px;  
+    font-weight: 100;   
+    border-radius: 10%;
+} 
+   
+
 
