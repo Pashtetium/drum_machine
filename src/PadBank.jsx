@@ -1,6 +1,7 @@
 import React from 'react';
 import DrumPad from './DrumPad';
 
+
 class PadBank extends React.Component {        
     constructor(props) {
         super(props);

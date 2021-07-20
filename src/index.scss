@@ -1,6 +1,6 @@
 $backgroundColor: #26B6BF;
 $innerColor: #20989F;
-$padWidth: 50px;
+$padWidth: 40px;
 $padHeight: 40px;
 
 * {
@@ -85,24 +85,20 @@ body {
     }
     .pad-bank {
         display: inline-block;
-        width: $padWidth * 3 + 70px;
-        height: $padHeight * 3;
-
-        margin: 5px;
-        
-        
+        width: $padWidth * 3 + 30px;
+        height: $padHeight * 4;        
+    
        .drum-pad {
             width: $padWidth;
             height: $padHeight;
             position: relative;
             float: left;
             cursor: pointer;
-            margin: 10px;
+            margin-right: 10px;
             box-sizing: border-box;
-            outline: 1px solid white;
-            display: flex;
-            justify-content: center;
-            align-items: center;            
+            outline: 1px solid white;              
+            text-align: center;
+            padding-top: 10px;          
             font-weight: 100;
             
             
